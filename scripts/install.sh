@@ -9,12 +9,12 @@ sudo sed -i "s/#MAKEFLAGS=\"-j2\"/MAKEFLAGS=\"-j$nc\"/g" /etc/makepkg.conf
 sudo sed -i "s/COMPRESSXZ=(xz -c -z -)/COMPRESSXZ=(xz -c -T $nc -z -)/g" /etc/makepkg.conf
 sudo sed -i 's/^timeout 3/timeout 0/' /boot/loader/loader.conf
 
-echo "Installing AUR helper..."
+echo -e "\e[1;34mInstalling AUR helper...\e[0m"
 git clone https://aur.archlinux.org/paru-bin.git
 cd paru-bin || exit && makepkg -si --noconfirm
 cd .. && rm -rf paru-bin
 
-echo "Installing packages"
+echo -e "\e[1;33mInstalling applications\e[0m"
 paru -S --noconfirm --needed xorg-server xorg-xinit xorg-xrandr xorg-xsetroot picom libxft noto-fonts noto-fonts-emoji alacritty mpv libxinerama lxappearance brightnessctl pulsemixer playerctl pamixer flameshot fastfetch btop polkit-gnome feh xtrlock papirus-icon-theme blueman
 sudo systemctl enable bluetooth
 
@@ -29,7 +29,7 @@ clear && cd
 git clone https://github.com/mashrukk/dwm
 mv dwm/ wm
 
-echo "Installing dwm, dmenu, and slstatus..."
+echo -e "\e[1;32mInstalling dwm, dmenu, and slstatus...\e[0m"
 cd wm/dwm || exit
 sudo make clean install
 cd ../dmenu || exit
