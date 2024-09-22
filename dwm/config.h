@@ -74,11 +74,10 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_s,      spawn,          SHCMD ("signal-desktop")},
 	{ MODKEY,                       XK_p,      spawn,          SHCMD ("tor-browser")},
 	{ MODKEY|ShiftMask,             XK_b,      spawn,          SHCMD ("blueman-manager")},
-	{ MODKEY,                       XK_w,      spawn,          SHCMD ("exec $HOME/wm/scripts/wallpaper.sh")},
+	{ MODKEY,                       XK_w,      spawn,          SHCMD ("exec $HOME/wm/scripts/wall.sh")},
 	{ MODKEY|ShiftMask,             XK_w,      spawn,          SHCMD ("feh --bg-scale --randomize $HOME/Pictures/Wallpapers/*") },
 	{ 0,			        XK_Print,  spawn,	   {.v = prtscrcmd } },
         { MODKEY,                       XK_l,      spawn,          SHCMD ("xtrlock")},
-
 /* Audio & Monitor */
 	{ ControlMask,                  XK_Up,     spawn,          SHCMD ("pactl -- set-sink-volume 0 +5%")},
 	{ ControlMask,                  XK_Down,   spawn,          SHCMD ("pactl -- set-sink-volume 0 -5%")},
@@ -141,4 +140,3 @@ static const Button buttons[] = {
 	{ ClkTagBar,            MODKEY,         Button1,        tag,            {0} },
 	{ ClkTagBar,            MODKEY,         Button3,        toggletag,      {0} },
 };
-
